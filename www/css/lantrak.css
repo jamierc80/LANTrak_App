@@ -1,0 +1,16 @@
+body {
+    padding-top: 7px;
+}
+.logo-img {
+    padding-top: 10px;
+    padding-bottom: 17px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
