@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "5a64f206-7b9f-4f22-a6c3-d76895c1b8ca",
-      "lastModifiedDate": 1476742373479,
+      "lastModifiedDate": 1477031736563,
       "creationDate": 1476734007454
     },
     "XDK-app-designer": "false",
@@ -87,12 +87,14 @@
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "21",
           "android-installLocation": "auto",
-          "android-signed": true
+          "android-signed": true,
+          "Fullscreen": true,
+          "Orientation": "default"
         },
         "isActive_": true,
-        "certificateId_": "UX5PoSDfMUGg-SMVXbvjiQ2",
-        "appName_": "LANTrak_App",
-        "appID_": "xdk.intel.cordova.template.lite",
+        "certificateId_": "Rhky1fjl8UO2LAQPuhtswQ2",
+        "appName_": "LANTrak",
+        "appID_": "uk.co.clarketechnologies.lantrak",
         "appAccess_": {
           "mode": "whitelist",
           "network": [
@@ -116,8 +118,8 @@
         "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "19",
         "appVersion_": "0.0.1",
-        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser.",
-        "appAuthor_": "Intel XDK",
+        "appDescription_": "LANTrak Mobile uses in your LANTrak web application data to make it easily accessible whilst away from your desk.",
+        "appAuthor_": "Clarke Technologies",
         "appVersionCode_": "1",
         "signed_": true
       },
@@ -129,10 +131,10 @@
           "ios-configuration": "adhoc",
           "deployment-target": "8.0"
         },
-        "isActive_": true,
+        "isActive_": false,
         "certificateId_": "_GvtMyJrUU6QLclgHznwPQ2",
-        "appName_": "LANTrak_App",
-        "appID_": "xdk.intel.cordova.template.lite",
+        "appName_": "LANTrak",
+        "appID_": "uk.co.clarketechnologies.lantrak",
         "appAccess_": {
           "mode": "whitelist",
           "network": [
@@ -157,10 +159,10 @@
         "excludedLibraries_": "",
         "iosProvs_": [],
         "cordovaCLIVersion_": "6.2.0",
-        "appAuthor_": "Intel XDK",
+        "appAuthor_": "Clarke Technologies",
         "crosswalkVersion_": "19",
         "appVersion_": "0.0.1",
-        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser."
+        "appDescription_": "LANTrak Mobile uses in your LANTrak web application data to make it easily accessible whilst away from your desk."
       },
       "Windows8": {
         "platform_": "windows8",

@@ -1,31 +1,52 @@
 app.controller('initialCtrl',['$scope', '$location', 'sharedValues', function ($scope, $location, sharedValues) {
     $scope.url = sharedValues.getlocal('url');
     if($scope.url) {
-        $location.path('/login');
+        sharedValues.apicheck().then(function(d){
+        if(d.a == 1) {
+            $location.path('/login');
+        }else{
+            $location.path('/config');
+        };
+        })
     } else {
         $location.path('/config');
     }
 }]);
 
 app.controller('configCtrl',['$scope', '$location', 'sharedValues', function ($scope, $location, sharedValues) {    
+    $scope.error = false;
     $scope.url = sharedValues.getlocal('url');
     $scope.btnSave = function() {
         sharedValues.setlocal('url', $scope.url);
         sharedValues.setlocal('logged_in', false);
-        $location.path('/login');
+        sharedValues.apicheck().then(function(d){
+        if(d.a == 1) {
+            $location.path('/login');
+        }},function(data) {
+            $scope.error = true;
+        })
     }
     $scope.btnCancel = function() {
         var l = sharedValues.getlocal('logged_in');
         if(l == 'true'){
             $location.path('/menu');
         }else{
+            sharedValues.apicheck().then(function(d){
+        if(d.a == 1) {
             $location.path('/login');
+        }},function(data) {
+            $scope.error = true;
+        })
         }
     }
 }]);
 
 app.controller('loginCtrl',['$scope', '$location', 'sharedValues', function ($scope, $location, sharedValues) {
+    
+    //SET $scope.error var to hide error message
     $scope.error = false;
+    
+    //Catch btnLogin event to login the user
     $scope.btnLogin = function() {
         $scope.error = false;
         var e = $scope.email;

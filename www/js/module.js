@@ -15,6 +15,13 @@ var app = angular.module("lantrak", ['ngRoute'])
         });
             return promise;
         },
+        apicheck: function() {
+            var url = localStorage.getItem('url');
+            var promise = $http.get(url + 'api/api_check/').then(function (response) {
+            return response.data;
+        });
+            return promise;
+        },
         gethosts: function() {
             var url = localStorage.getItem('url');
             var promise = $http.get(url + 'api/get_hosts/').then(function (response) {

@@ -3,31 +3,16 @@
 <div class="panel panel-default">
     <div class="panel-heading"><h3>Config</h3></div>
     <div class="panel-body">
-       <form>
-           <div class="form-group">
-                <input type="text" class="form-control input-lg" ng-model="url" placeholder="Server URL">
+       <form name="configForm" novalidate>
+           <div class="alert alert-danger" ng-show="error">
+            ERROR: Invalid LANTrak URL
+          </div>
+           <div class="form-group" ng-class="{ 'has-error' : configForm.url.$invalid && configForm.url.$touched }">
+                <input type="text" class="form-control input-lg" name="url" ng-model="url" placeholder="Server URL" ng-required="true">
            </div>
-           <button ng-click="btnSave()" class="btn btn-success btn-lg">Save</button>
+           <button ng-click="configForm.$valid && btnSave()" class="btn btn-success btn-lg">Save</button>
            <button ng-click="btnCancel()" class="btn btn-danger btn-lg">Cancel</button>
        </form>
     </div>
 </div>
-</div>
-<!-- Logout Modal -->
-<div class="modal fade" id="logoutconfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Logout</h4>
-      </div>
-      <div class="modal-body">
-        Are you sure you would like logout?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success btn-lg" ng-click="btnLogout()">Yes</button>
-        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">No</button>
-      </div>
-    </div>
-  </div>
 </div>

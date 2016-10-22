@@ -11,26 +11,10 @@
             <input type="text" class="form-control input-lg" ng-model="search" placeholder="Search">
         </div>
        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="s in sites | filter : search">{{ s.site_code }} - {{ s.site_description }}</li>
+           <a data-toggle="modal" data-target="#sitedetail" class="list-group-item" ng-repeat="s in sites | filter : search">{{ s.site_code }} - {{ s.site_description }}</a>
         </ul>
     </div>
 </div>
 </div>
-<!-- Logout Modal -->
-<div class="modal fade" id="logoutconfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Logout</h4>
-      </div>
-      <div class="modal-body">
-        Are you sure you would like logout?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success btn-lg" ng-click="btnLogout()">Yes</button>
-        <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">No</button>
-      </div>
-    </div>
-  </div>
-</div>
+<div ng-include="'partials/modal_logout.html'"></div>
+<div ng-include="'partials/modal_sitedetail.html'"></div>

@@ -3,17 +3,17 @@
 <div class="panel panel-default">
   <div class="panel-heading"><h3>Login</h3></div>
   <div class="panel-body">
-      <form>
+      <form name="loginForm" novalidate>
           <div class="alert alert-danger" ng-show="error">
             Login Error!
           </div>
-          <div class="form-group">
-            <input type="email" class="form-control input-lg" ng-model="email" placeholder="Email">
+          <div class="form-group" ng-class="{ 'has-error' : loginForm.emaill.$invalid && loginForm.emaill.$touched }">
+            <input type="email" class="form-control input-lg" name="emaill" ng-model="email" placeholder="Email" ng-required="true">
           </div>
-          <div class="form-group">
-            <input type="password" class="form-control input-lg" ng-model="password" placeholder="Password">
+          <div class="form-group" ng-class="{ 'has-error' : loginForm.password.$invalid && loginForm.password.$touched }">
+            <input type="password" class="form-control input-lg" name="password" ng-model="password" placeholder="Password" ng-required="true">
           </div>
-          <button ng-click="btnLogin()" class="btn btn-success btn-lg">Login</button>
+          <button ng-click="loginForm.$valid && btnLogin()" class="btn btn-success btn-lg">Login</button>
       </form>
     </div>
     </div>
