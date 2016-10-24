@@ -7,7 +7,23 @@
         <h4 class="modal-title" id="myModalLabel">Site Detail</h4>
       </div>
       <div class="modal-body">
-        Details
+        <form name="siteDetail">
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" name="site_code" id="site_code" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" name="site_description" id="site_description" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" name="site_subnet" id="site_subnet" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" name="site_gateway" id="site_gateway" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" name="site_country" id="site_country" readonly>
+            </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Close</button>
@@ -15,3 +31,20 @@
     </div>
   </div>
 </div>
+<script>
+$('#sitedetail').on('show.bs.modal', function(e) {
+
+    var siteCode = $(e.relatedTarget).data('site-code');
+    var siteDescriprion = $(e.relatedTarget).data('site-description');
+    var siteSubnet = $(e.relatedTarget).data('site-subnet');
+    var siteGateway = $(e.relatedTarget).data('site-gateway');
+    var siteCountry = $(e.relatedTarget).data('site-country');
+    
+    $(e.currentTarget).find('input[name="site_code"]').val(siteCode);
+    $(e.currentTarget).find('input[name="site_description"]').val(siteDescriprion);
+    $(e.currentTarget).find('input[name="site_subnet"]').val(siteSubnet);
+    $(e.currentTarget).find('input[name="site_gateway"]').val(siteGateway);
+    $(e.currentTarget).find('input[name="site_country"]').val(siteCountry);
+    
+});
+</script>

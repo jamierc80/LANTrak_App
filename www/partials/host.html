@@ -10,7 +10,7 @@
             <input type="text" class="form-control input-lg" ng-model="search" placeholder="Search">
           </div>
         <ul class="list-group">
-            <a data-toggle="modal" data-target="#hostdetail" class="list-group-item" ng-repeat="h in hosts | filter : search">{{ h.host_hostname }} - {{ h.host_ip }}</a>
+            <a data-toggle="modal" data-target="#hostdetail" data-host-hostname="{{h.host_hostname}}" data-host-ip="{{h.host_ip}}" data-host-type="{{h.ht_description}}" data-host-comments="{{h.host_comments}}" data-host-site="{{h.site_code}} - {{h.site_description}}" class="list-group-item" ng-repeat="h in hosts | filter : search">{{ h.host_hostname }} - {{ h.host_ip }}</a>
         </ul>
     </div>
 </div>

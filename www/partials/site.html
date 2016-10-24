@@ -11,7 +11,7 @@
             <input type="text" class="form-control input-lg" ng-model="search" placeholder="Search">
         </div>
        <ul class="list-group">
-           <a data-toggle="modal" data-target="#sitedetail" class="list-group-item" ng-repeat="s in sites | filter : search">{{ s.site_code }} - {{ s.site_description }}</a>
+           <a data-toggle="modal" data-target="#sitedetail" data-site-id="{{s.site_id}}" data-site-code="{{s.site_code}}" data-site-description="{{s.site_description}}" data-site-subnet="{{s.site_subnet}}" data-site-gateway="{{s.site_gateway}}" data-site-country="{{s.country_description}}" class="list-group-item" ng-repeat="s in sites | filter : search">{{ s.site_code }} - {{ s.site_description }}</a>
         </ul>
     </div>
 </div>
